@@ -4,11 +4,11 @@ import { provideRouter } from '@angular/router';
 import APP_ROUTES from '@core/configs/app.routing';
 import { AppComponent } from './app/app.component';
 
-export const BACKEND_URL = new InjectionToken<string>('http://localhost:4000');
+export const API_URL = new InjectionToken<string>('API_URL');
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: BACKEND_URL, useValue: 'http://localhost:4000' },
+    { provide: API_URL, useValue: 'http://localhost:4000' },
     provideRouter(APP_ROUTES),
   ],
 });

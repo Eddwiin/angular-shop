@@ -3,7 +3,7 @@ import { PATHS } from 'src/app/shared/enums/paths.enum';
 
 export default [
   {
-    path: PATHS.DEFAULT,
+    path: PATHS.AUTH,
     loadComponent: () =>
       import('./../../components/auth/auth.component').then(
         c => c.AuthComponent
@@ -30,6 +30,16 @@ export default [
             './../../components/auth/forgot-password/forgot-password.component'
           ).then(c => c.ForgotPasswordComponent),
       },
+      {
+        path: '',
+        pathMatch: 'prefix',
+        redirectTo: `/${PATHS.AUTH}/${PATHS.SIGN_IN}`,
+      },
     ],
+  },
+  {
+    path: '',
+    pathMatch: 'prefix',
+    redirectTo: `/${PATHS.AUTH}`,
   },
 ] as Route[];

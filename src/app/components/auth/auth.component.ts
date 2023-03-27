@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SHARED_MODULE } from '@shared/shared-module';
 
 @Component({
   selector: 'as-auth',
   standalone: true,
-  imports: [CommonModule],
+  imports: [...SHARED_MODULE],
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.sass'],
 })

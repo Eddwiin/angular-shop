@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.sass']
+  styleUrls: ['./forgot-password.component.sass'],
 })
-export class ForgotPasswordComponent {
-
-}
+export class ForgotPasswordComponent {}

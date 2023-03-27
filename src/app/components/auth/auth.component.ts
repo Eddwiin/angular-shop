@@ -6,8 +6,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.sass']
+  styleUrls: ['./auth.component.sass'],
 })
-export class AuthComponent {
-
-}
+export class AuthComponent {}

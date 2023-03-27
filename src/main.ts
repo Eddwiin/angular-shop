@@ -1,7 +1,14 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { InjectionToken } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import APP_ROUTES from '@core/configs/app.routing';
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
+export const BACKEND_URL = new InjectionToken<string>('http://localhost:4000');
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    {provide: BACKEND_URL, useValue: 'http://localhost:4000'},
+    provideRouter(APP_ROUTES)
+  ],
+})

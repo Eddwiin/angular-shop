@@ -30,16 +30,11 @@ export default [
             './../../components/auth/forgot-password/forgot-password.component'
           ).then(c => c.ForgotPasswordComponent),
       },
-      {
-        path: '',
-        pathMatch: 'prefix',
-        redirectTo: `/${PATHS.AUTH}/${PATHS.SIGN_IN}`,
-      },
     ],
   },
   {
     path: '',
-    pathMatch: 'prefix',
-    redirectTo: `/${PATHS.AUTH}`,
+    pathMatch: 'full',
+    redirectTo: `/${PATHS.AUTH}/${PATHS.SIGN_IN}`,
   },
 ] as Route[];

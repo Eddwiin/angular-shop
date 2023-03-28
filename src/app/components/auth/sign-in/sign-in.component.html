@@ -1,1 +1,15 @@
-<p>sign-in works!</p>
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Email</label>
+    <input type="text" [formControl]="emailCtrl" />
+  </div>
+
+  <div>
+    <label>Password</label>
+    <input type="password" [formControl]="passwordCtrl" />
+  </div>
+
+  <button id="password-sign-in" type="submit" [disabled]="signInForm.invalid">
+    Envoyer
+  </button>
+</form>

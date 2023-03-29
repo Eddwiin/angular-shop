@@ -17,10 +17,10 @@ export default [
           ),
       },
       {
-        path: PATHS.SIGN_IN,
+        path: PATHS.SIGN_UP,
         loadComponent: () =>
-          import('./../../components/auth/sign-in/sign-in.component').then(
-            c => c.SignInComponent
+          import('./../../components/auth/sign-up/sign-up.component').then(
+            c => c.SignUpComponent
           ),
       },
       {

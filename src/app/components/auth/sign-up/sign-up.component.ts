@@ -10,6 +10,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-up.component.sass'],
 })
 export class SignUpComponent {
-  firstNameCtrl = new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]);
+  firstNameCtrl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(15),
+  ]);
+
+  lastNameCtrl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(15),
+  ]);
+
   signUpForm = new FormGroup({});
 }

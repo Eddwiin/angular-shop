@@ -8,4 +8,7 @@ import { SHARED_MODULE } from '@shared/shared-module';
   styleUrls: ['./app.component.sass'],
   imports: [...SHARED_MODULE],
 })
-export class AppComponent {}
+
+export class AppComponent {
+  constructor() {}
+}

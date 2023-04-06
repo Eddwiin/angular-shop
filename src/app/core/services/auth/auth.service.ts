@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { catchError, of, throwError } from 'rxjs';
 type Authentification = {
   firstName: string;
   lastName: string;
@@ -24,5 +24,9 @@ export class AuthService {
         return throwError(() => e);
       })
     );
+  }
+
+  isLogged() {
+    return of(true);
   }
 }

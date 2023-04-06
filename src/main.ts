@@ -1,3 +1,4 @@
+import { provideHttpClient } from '@angular/common/http';
 import { InjectionToken } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
@@ -9,6 +10,7 @@ export const API_URL = new InjectionToken<string>('API_URL');
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: API_URL, useValue: 'http://localhost:4000' },
+    provideHttpClient(),
     provideRouter(APP_ROUTES),
   ],
 });

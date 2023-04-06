@@ -1,5 +1,7 @@
+import { inject } from '@angular/core';
 import { Route } from '@angular/router';
-import { PATHS } from 'src/app/shared/enums/paths.enum';
+import { AuthService } from '@core/services/auth/auth.service';
+import { PATHS } from '@shared/enums/paths.enum';
 
 export default [
   {
@@ -8,6 +10,12 @@ export default [
       import('./../../components/auth/auth.component').then(
         c => c.AuthComponent
       ),
+    canActivate: [
+      () => {
+        console.log('BONJOUR GUARD');
+        return inject(AuthService).isLogged();
+      },
+    ],
     children: [
       {
         path: PATHS.SIGN_IN,
@@ -33,8 +41,15 @@ export default [
     ],
   },
   {
+    path: PATHS.HOME,
+    loadComponent: () =>
+      import('./../../components/home/home.component').then(
+        c => c.HomeComponent
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
-    redirectTo: `/${PATHS.AUTH}/${PATHS.SIGN_IN}`,
+    redirectTo: `/${PATHS.HOME}`,
   },
 ] as Route[];

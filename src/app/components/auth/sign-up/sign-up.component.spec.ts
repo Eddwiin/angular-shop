@@ -24,6 +24,12 @@ describe('SignUpComponent', () => {
       expect(component.signUpForm).toBeTruthy();
     });
 
+    describe('Gender name ctrl', () => {
+      it('should create genderCtrl', () => {
+        expect(component.genderCtrl).toBeTruthy();
+      });
+    });
+
     describe('First name control', () => {
       beforeEach(() => {
         component.firstNameCtrl.setValue('');

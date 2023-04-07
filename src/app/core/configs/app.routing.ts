@@ -10,12 +10,7 @@ export default [
       import('./../../components/auth/auth.component').then(
         c => c.AuthComponent
       ),
-    canActivate: [
-      () => {
-        console.log('BONJOUR GUARD');
-        return inject(AuthService).isLogged();
-      },
-    ],
+    canActivate: [() => inject(AuthService).isLogged()],
     children: [
       {
         path: PATHS.SIGN_IN,
@@ -50,6 +45,6 @@ export default [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: `/${PATHS.HOME}`,
+    redirectTo: `/${PATHS.AUTH}/${PATHS.SIGN_IN}`,
   },
 ] as Route[];
